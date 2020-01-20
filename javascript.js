@@ -53,4 +53,13 @@ map.on('locationerror', onLocationError);
 
 map.locate({setView: true, maxZoom: 16});
 
-L.control.layers(baseMaps, overlayMaps).addTo(map);
+var baseMaps = {
+    "light": light,
+    "dark": dark
+};
+
+L.control.layers(baseMaps).addTo(map);
+
+function myFunction() {
+  alert("For the purpose of learning how to write code for TGIS504, entering this website will promptly ask for your geolocation. You may allow or deny the access. By allowing access, it will display an approximate radius area that you are within. The information will not be stored or sold to any third party."); 
+}
